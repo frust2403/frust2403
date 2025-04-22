@@ -80,3 +80,13 @@ $userdel -r smbuser
 ```
 $sudo service smbd restart
 $sudo service nmbd restart
+```
+* Linux 連結 Samba Server
+```
+$sudo apt-get install smbclient cifs-utils
+$sudo mkdir -p /mnt/share
+$sudo mount -t cifs  //{Samba Server IP}/share /mnt/share -o username=smbuser,password=123456789
+$df
+$sudo umount /mnt/share
+```
+
