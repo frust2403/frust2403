@@ -47,6 +47,11 @@ Samba提供了基於CIFS的四個服務：文件和打印服務、授權與被�
 ```
 $ sudo apt-get install samba
 ```
+* 安裝完後Samba會自動啟動，若沒有啟動，可輸入如下指令
+```
+$ sudo systemctl start nmbd
+$ sudo systemctl start smbd
+```
 * 設定不須登入/操作shell的帳號
 ```
 $sudo adduser smbuser --shell /bin/false
@@ -74,3 +79,4 @@ $userdel -r smbuser
 * 重啟 Samba Server
 ```
 $sudo service smbd restart
+$sudo service nmbd restart
