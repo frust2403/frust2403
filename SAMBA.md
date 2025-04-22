@@ -49,3 +49,9 @@ $ sudo apt-get install samba
 ```
 * 設定不須登入/操作shell的帳號
 ```
+$sudo adduser smbuser --shell /bin/false
+```
+* 設定密碼
+```
+$sudo smbpasswd -a smbuser
+```
