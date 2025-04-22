@@ -41,3 +41,11 @@ smbd與nmbd
 Samba提供了基於CIFS的四個服務：文件和打印服務、授權與被授權、名字解析、瀏覽服務。
 * 「文件和打印服務」、「授權與被授權」 由smbd提供
 * 「名字解析」、「瀏覽服務」則由nmbd提供
+實作
+----------
+* 安裝samba server
+```
+$ sudo apt-get install samba
+```
+* 設定不須登入/操作shell的帳號
+```
