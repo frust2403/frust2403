@@ -55,3 +55,22 @@ $sudo adduser smbuser --shell /bin/false
 ```
 $sudo smbpasswd -a smbuser
 ```
+* 移除使用者(可選)
+```
+$smbpasswd -x smbuser
+$userdel -r smbuser
+```
+* 調整 Samba 的設定檔/etc/samba/smb.conf，在檔案的尾巴加入下面這幾行後存檔離開。
+```
+[share]
+ path = /home/smbuser # 這個是要分享的資料夾路徑
+ available = yes
+ valid users = smbuser # 這個是可以使用這個分享資料夾的使用者，要具有 path 所指定的路徑的權限才行
+ read only = no
+ browseable = yes
+ public = yes
+ writable = yes
+```
+* 重啟 Samba Server
+```
+$sudo service smbd restart
